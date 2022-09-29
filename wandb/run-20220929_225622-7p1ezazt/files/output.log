@@ -1,0 +1,79 @@
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Files already downloaded and verified
+Files already downloaded and verified
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 8 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 8 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Traceback (most recent call last):
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 119, in <module>
+    trainer.fit(model, cifar)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 696, in fit
+    self._call_and_handle_interrupt(
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 735, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1166, in _run
+    results = self._run_stage()
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1252, in _run_stage
+    return self._run_train()
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1283, in _run_train
+    self.fit_loop.run()
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\fit_loop.py", line 271, in advance
+    self._outputs = self.epoch_loop.run(self._data_fetcher)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\epoch\training_epoch_loop.py", line 203, in advance
+    batch_output = self.batch_loop.run(kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\batch\training_batch_loop.py", line 87, in advance
+    outputs = self.optimizer_loop.run(optimizers, kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\optimization\optimizer_loop.py", line 201, in advance
+    result = self._run_optimization(kwargs, self._optimizers[self.optim_progress.optimizer_position])
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\optimization\optimizer_loop.py", line 248, in _run_optimization
+    self._optimizer_step(optimizer, opt_idx, kwargs.get("batch_idx", 0), closure)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\optimization\optimizer_loop.py", line 358, in _optimizer_step
+    self.trainer._call_lightning_module_hook(
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1550, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\core\module.py", line 1705, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\core\optimizer.py", line 168, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, self._optimizer_idx, closure, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\strategies\strategy.py", line 216, in optimizer_step
+    return self.precision_plugin.optimizer_step(model, optimizer, opt_idx, closure, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\plugins\precision\precision_plugin.py", line 153, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\torch\optim\optimizer.py", line 113, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\torch\autograd\grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\torch\optim\sgd.py", line 125, in step
+    loss = closure()
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\plugins\precision\precision_plugin.py", line 138, in _wrap_closure
+    closure_result = closure()
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\optimization\optimizer_loop.py", line 146, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\optimization\optimizer_loop.py", line 132, in closure
+    step_output = self._step_fn()
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loops\optimization\optimizer_loop.py", line 407, in _training_step
+    training_step_output = self.trainer._call_strategy_hook("training_step", *kwargs.values())
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1704, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\strategies\strategy.py", line 358, in training_step
+    return self.model.training_step(*args, **kwargs)
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 42, in training_step
+    self.log('train_acc', self.accuracy(logits, y))
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\torch\nn\modules\module.py", line 1207, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'cifar_model' object has no attribute 'accuracy'
+50000
+Epoch 0:   0%|                                                                                                                                                                                                                                                                                  | 0/196 [00:00<?, ?it/s]

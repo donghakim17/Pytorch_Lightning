@@ -1,0 +1,34 @@
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\configuration_validator.py:105: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+Files already downloaded and verified
+Files already downloaded and verified
+50000
+Traceback (most recent call last):
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 96, in <module>
+    trainer.fit(model, cifar)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 696, in fit
+    self._call_and_handle_interrupt(
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 735, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1147, in _run
+    self.strategy.setup(self)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\strategies\single_device.py", line 74, in setup
+    super().setup(trainer)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\strategies\strategy.py", line 153, in setup
+    self.setup_optimizers(trainer)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\strategies\strategy.py", line 141, in setup_optimizers
+    self.optimizers, self.lr_scheduler_configs, self.optimizer_frequencies = _init_optimizers_and_lr_schedulers(
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\core\optimizer.py", line 179, in _init_optimizers_and_lr_schedulers
+    optim_conf = model.trainer._call_lightning_module_hook("configure_optimizers", pl_module=model)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1550, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 45, in configure_optimizers
+    return torch.optim.SGD(self.parameters(), lr=self.lr)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\torch\nn\modules\module.py", line 1207, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'cifar_model' object has no attribute 'lr'

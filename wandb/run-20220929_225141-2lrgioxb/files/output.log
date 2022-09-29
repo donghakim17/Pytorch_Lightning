@@ -1,0 +1,28 @@
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\configuration_validator.py:105: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+Files already downloaded and verified
+Files already downloaded and verified
+Traceback (most recent call last):
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 96, in <module>
+    trainer.fit(model, cifar)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 696, in fit
+    self._call_and_handle_interrupt(
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 735, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1105, in _run
+    self._call_setup_hook()  # allow user to setup lightning_module in accelerator environment
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1447, in _call_setup_hook
+    self._call_lightning_datamodule_hook("setup", stage=fn)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1569, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 68, in setup
+    self.cifar_train, self.cifar_val = random_split(cifar_train, [55000, 5000])
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\torch\utils\data\dataset.py", line 311, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+50000

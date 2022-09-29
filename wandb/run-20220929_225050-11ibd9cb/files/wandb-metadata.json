@@ -1,0 +1,24 @@
+{
+    "os": "Windows-10-10.0.19044-SP0",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-09-29T13:50:51.841270",
+    "startedAt": "2022-09-29T13:50:50.643754",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\dhkim\\penv\\pytorch_env\\pytorch_lightning\\cifal_model.py",
+    "codePath": "cifal_model.py",
+    "git": {
+        "remote": "\u0096",
+        "commit": null
+    },
+    "email": null,
+    "root": "C:/Users/dhkim/penv/pytorch_env/pytorch_lightning",
+    "host": "DESKTOP-NHNVRLB",
+    "username": "dhkim",
+    "executable": "C:\\Users\\dhkim\\anaconda3\\envs\\conda_env\\python.exe"
+}

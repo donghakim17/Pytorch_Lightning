@@ -1,0 +1,171 @@
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\configuration_validator.py:105: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+0it [00:00, ?it/s]
+Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./cifar-10-python.tar.gz
+0it [00:00, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍| 170139648/170498071 [04:48<00:00, 596171.97it/s]
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊| 170393600/170498071 [04:48<00:00, 604163.89it/s]
+Traceback (most recent call last):███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊| 170393600/170498071 [04:48<00:00, 604163.89it/s]
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 97, in <module>
+    trainer.fit(model, cifar)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 696, in fit
+    self._call_and_handle_interrupt(
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 735, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1105, in _run
+    self._call_setup_hook()  # allow user to setup lightning_module in accelerator environment
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1447, in _call_setup_hook
+    self._call_lightning_datamodule_hook("setup", stage=fn)
+  File "C:\Users\dhkim\anaconda3\envs\conda_env\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1569, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "c:\Users\dhkim\penv\pytorch_env\pytorch_lightning\cifal_model.py", line 67, in setup
+    train_size = int(0.9(len(cifar_train)))
+TypeError: 'float' object is not callable
